@@ -16,3 +16,5 @@ RUN apt-get update && \
 ADD apache.conf /etc/apache2/conf-available/local.conf
 
 RUN a2enmod vhost_alias rewrite headers fcgid && a2enconf local
+
+RUN echo "Asia/Tokyo" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
